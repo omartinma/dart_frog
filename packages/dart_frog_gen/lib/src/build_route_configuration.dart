@@ -202,7 +202,7 @@ List<RouteFile> _getRouteFiles({
       name: filePath.toAlias(),
       path: relativeFilePath.replaceAll(r'\', '/'),
       route: fileRoute.toRoute(),
-      params: filePath.toParams(),
+      params: fileRoute.toParams(),
     );
     onRoute(route);
     files.add(route);
