@@ -33,7 +33,7 @@ RouteConfiguration buildRouteConfiguration(Directory directory) {
     directory: routesDirectory,
     routesDirectory: routesDirectory,
     onRoute: (route) {
-      final isDynamic = route.params.isNotEmpty;
+      final isDynamic = route.name.contains(r'$');
       if (isDynamic) {
         routes.insert(0, route);
       } else {
