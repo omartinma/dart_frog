@@ -32,7 +32,14 @@ RouteConfiguration buildRouteConfiguration(Directory directory) {
   final directories = _getRouteDirectories(
     directory: routesDirectory,
     routesDirectory: routesDirectory,
-    onRoute: routes.add,
+    onRoute: (route) {
+      final isDynamic = route.params.isNotEmpty;
+      if (isDynamic) {
+        routes.insert(0, route);
+      } else {
+        routes.add(route);
+      }
+    },
     onMiddleware: middleware.add,
     onEndpoint: (endpoint, file) {
       if (!endpoints.containsKey(endpoint)) {
@@ -195,7 +202,7 @@ List<RouteFile> _getRouteFiles({
       name: filePath.toAlias(),
       path: relativeFilePath.replaceAll(r'\', '/'),
       route: fileRoute.toRoute(),
-      params: fileRoute.toParams(),
+      params: filePath.toParams(),
     );
     onRoute(route);
     files.add(route);
