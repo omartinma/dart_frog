@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { newRoute } from "./commands";
+import { newRoute, uninstall } from "./commands";
 
 /**
  * This method is called when the extension is activated.
@@ -14,6 +14,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand("extension.new-route", newRoute)
   );
+  context.subscriptions.push(
+    vscode.commands.registerCommand("extension.uninstall", uninstall)
+  );
 }
-
-export function deactivate() {}
