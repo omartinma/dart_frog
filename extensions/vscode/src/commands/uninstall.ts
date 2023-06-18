@@ -41,9 +41,8 @@ export const uninstall = async () => {
  * @returns {boolean} Whether the user has dart_frog_cli installed in their system.
  */
 function hasDartFrogCliInstalled(): boolean {
-  const command = `dart_frog --version`;
   try {
-    cp.execSync(command);
+    cp.execSync(`dart_frog --version`);
     return true;
   } catch (error) {
     return false;

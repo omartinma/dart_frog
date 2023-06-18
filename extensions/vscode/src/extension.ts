@@ -12,9 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
   // TODO(alestiago): Update dart_frog_cli if it's not up to date.
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("extension.new-route", newRoute)
-  );
-  context.subscriptions.push(
-    vscode.commands.registerCommand("extension.uninstall", uninstall)
+    vscode.commands.registerCommand("extension.new-route", newRoute),
+    vscode.commands.registerCommand("extension.uninstall", uninstall) // FIXME(alestiago): Command not found.
   );
 }
