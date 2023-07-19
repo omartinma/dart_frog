@@ -9,6 +9,8 @@ Developed with 💙 by [Very Good Ventures][very_good_ventures_link] 🦄
 
 Dart Frog can be installed from the [VS Code Marketplace](https://marketplace.visualstudio.com/vscode) or by [searching within VS Code](https://code.visualstudio.com/docs/editor/extension-gallery#_search-for-an-extension).
 
+![New route usage demonstration]()
+
 ## Commands
 
 | Command                     | Description                 |
